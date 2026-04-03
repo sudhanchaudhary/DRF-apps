@@ -25,5 +25,5 @@ class InfoForm(forms.ModelForm):
             'country':forms.TextInput(attrs={'class':'form-control','type':'text'}),
             'address':forms.TextInput(attrs={'class':'form-control','type':'text'}),
             'phone':forms.TextInput(attrs={'class':'form-control','type':'text'}),
-            'gender':forms.RadioSelect(GENDER)
+            'gender':forms.RadioSelect(choices=GENDER)
         }
