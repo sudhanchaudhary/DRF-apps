@@ -1,7 +1,9 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
+
 from .forms import InfoForm
 from .models import Info
+from .serializer import InfoSerializer
 # Create your views here.
 def home(request):
     form=InfoForm()
