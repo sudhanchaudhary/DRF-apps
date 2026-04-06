@@ -1,9 +1,7 @@
 from rest_framework import serializers
+from .models import Info
 
-class InfoSerializer(serializers.Serializer):
-    name=serializers.CharField()
-    email=serializers.EmailField()
-    country=serializers.CharField()
-    address=serializers.CharField()
-    phone=serializers.CharField()
-    gender=serializers.CharField()
+class InfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Info
+        fields='__all__'

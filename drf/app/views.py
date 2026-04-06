@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
+from rest_framework import viewsets
 
 from .forms import InfoForm
 from .models import Info
@@ -16,3 +17,6 @@ def home(request):
         else:
             form = InfoForm()
     return render(request,'form.html',{'form':form}) 
+class InfoApiView(viewsets.ModelViewSet):
+    queryset=Info.objects.all()
+    serializer_class=InfoSerializer
